@@ -9,11 +9,11 @@ que contiene un backend con su respectivo frontend.
 * Valenti Joel
 
 # BackendGenerico
-Backend Genérico realizado en Spring 3.9 
+Backend Genérico realizado en Spring 4
 
 # Tecnologias
 * Java 8
-* Spring 3.9
+* Spring 4
 * JPA
 * Hibernate
 * Maven
@@ -44,3 +44,8 @@ Frontend con algunas estructuras genéricas realizado en Angular 9.
 - Jquery, Pooper y Bootstrap: npm install --save jquery popper.js bootstrap
 - Google Maps: npm install @agm/core --save
 - Firebase: npm install firebase @angular/fire
+
+
+# Base de datos y properties
+* Crear una base de datos que se llame "laboratorioivgenerico" 
+* Cambiar puerto del properties a 3306
