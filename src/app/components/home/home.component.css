@@ -1,0 +1,59 @@
+.navbar {
+  background: rgb(27, 27, 27);
+  background: linear-gradient(90deg, rgba(27, 27, 27, 1) 0%, rgba(1, 55, 77, 1) 50%, rgba(27, 27, 27, 1) 100%);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: -8px 9px 10px -1px rgba(1, 55, 77, 1);
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.avatar {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 2%;
+  background-size: 100% auto;
+}
+
+.divi {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.container {
+  width: 900px;
+  height: 40px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.select {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 20px;
+  border: solid;
+  border-color: white;
+}
+
+.agm-map {
+  height: 300px;
+}
+
+.cuadro {
+    background: rgba(255,255,255,0.7) none no-repeat scroll 0px 0px;
+    border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 0px -5px #FFFFFF, 0px -10px 0px -5px #FFFFFF, 10px 0px 0px -5px #FFFFFF, -10px 0px 0px -5px #FFFFFF, 0px 0px 0px 5px rgb(119, 119, 119), 2.5px 2.5px 9px 7.5px #000000;
+  box-shadow: 0px 10px 0px -5px #FFFFFF, 0px -10px 0px -5px #FFFFFF, 10px 0px 0px -5px #FFFFFF, -10px 0px 0px -5px #FFFFFF, 0px 0px 0px 5px rgb(119, 119, 119), 2.5px 2.5px 9px 7.5px #000000;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  padding: 0.5%;
+}

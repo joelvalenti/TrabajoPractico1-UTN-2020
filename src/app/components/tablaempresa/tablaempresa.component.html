@@ -1,0 +1,51 @@
+<section class="secti">
+    <div class="divi">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-10">
+                <h1>Gestión de Empresas</h1>
+            </div>
+            <div class=" col-xs-12 col-sm-4 col-md-2">
+                <button type="button" class="btn btn-primary float-right ml-3 btn-block" data-toggle="modal" data-target="#modalEmpresa" (click)="resetear()">+ Agregar</button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Denominación</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Horario</th>
+                            <th scope="col" hidden>Quiénes somos</th>
+                            <th scope="col">Latitud</th>
+                            <th scope="col">Longitud</th>
+                            <th scope="col">Domicilio</th>
+                            <th scope="col" hidden>Email</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of empresas | paginate: { itemsPerPage: 6, currentPage: pageActual }">
+                            <th scope="row">{{i.id}}</th>
+                            <td>{{i.denominacion}}</td>
+                            <td>{{i.telefono}}</td>
+                            <td>{{i.horario_de_atencion}}</td>
+                            <td hidden>{{i.quienes_somos}}</td>
+                            <td>{{i.latitud}}</td>
+                            <td>{{i.longitud}}</td>
+                            <td>{{i.domicilio}}</td>
+                            <td hidden>{{i.email}}</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEmpresa" (click)="onPreUpdate(i)">Update</button>
+                                <button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</section>
+<app-modalempresa [empresaSeleccionada]="empresaSeleccionada"></app-modalempresa>

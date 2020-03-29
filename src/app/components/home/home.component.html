@@ -1,0 +1,124 @@
+<div class="navbar">
+  <h1 class="ml-4">
+    <a href="/home/{{this.empresa.id}}" style="color:white"><small>{{this.empresa.denominacion}}</small></a>
+  </h1>
+  <div class="help-box text-right mr-3">
+    <small>
+      <span style="color:white">Telefono</span>
+      <br>
+      <h2><a href="callto:#">{{this.empresa.telefono}}</a></h2>
+    </small>
+    <br>
+    <small>
+      <span style="color:white">Horario</span>
+      <br>
+      <h2 style="color:gray">{{this.empresa.horario_de_atencion}}</h2>
+    </small>
+  </div>
+</div>
+<div class="container">
+  <h4 class="mt-2">Buscar por:</h4>
+  <select class="select" [(ngModel)]="keyword">
+    <option value="titulo_de_la_noticia" selected>Titulo de la Noticia</option>
+    <option value="resumen_de_la_noticia">Resumen</option>
+  </select>
+  <div class="ng-autocomplete">
+    <ng-autocomplete class="complete" [data]="data" [searchKeyword]="keyword" (selected)='selectEvent($event)'
+      [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+    </ng-autocomplete>
+    <ng-template #itemTemplate let-item>
+      <a [innerHTML]="item.titulo_de_la_noticia"></a>
+    </ng-template>
+    <ng-template #itemTemplate let-item>
+      <a [innerHTML]="item.resumen_de_la_noticia"></a>
+    </ng-template>
+    <ng-template #notFoundTemplate let-notFound>
+      <div [innerHTML]="notFound"></div>
+    </ng-template>
+  </div>
+</div>
+<!--<img src="/63.jpg">-->
+<section class="mt-3 ml-5 mr-5 mb-2" align="center">
+  <div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img height="600px" src="{{this.noticias1.imagen_noticia}}" class="avatar d-block w-100"
+            alt="{{this.noticias1.id}} slice" (click)="goNoticia(this.noticias1.id)">
+          <div class="carousel-caption d-none d-md-block">
+            <div class="cuadro">
+              <p class="mt-2"><b>{{this.noticias1.titulo_de_la_noticia}}</b></p>
+              <p class="mt-2 mb-2">{{this.noticias1.resumen_de_la_noticia}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" *ngFor="let imagen of noticias">
+          <img height="600px" src="{{imagen.imagen_noticia}}" class="avatar d-block w-100" alt="{{imagen.id}} slice"
+            (click)="goNoticia(imagen.id)">
+          <div class="carousel-caption d-none d-md-block">
+            <div class="cuadro">
+                <p class="mt-2"><b>{{imagen.titulo_de_la_noticia}}</b></p>
+                <p class="mt-2 mb-2">{{imagen.resumen_de_la_noticia}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" style="width: 30%;height: 30%;" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" style="width: 30%;height: 30%;" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+  </div>
+  <hr>
+</section>
+<div align="center">
+  <h1>
+    Quienes Somos
+  </h1>
+  <div class="row">
+    <div class="col">
+      <p>
+        {{this.empresa.denominacion}}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container" align="center">
+  <h2 class="txt-pr">
+    Donde estamos
+  </h2>
+</div>
+<section class="ml-5 mr-5">
+  <div align="center">
+    <agm-map [latitude]="this.empresa.latitud" [longitude]="this.empresa.longitud">
+      <agm-marker [latitude]="this.empresa.latitud" [longitude]="this.empresa.longitud"></agm-marker>
+    </agm-map>
+  </div>
+  <address>
+    <dl>
+      <dt>Telefono: </dt>
+      <dd class="phone" style="color:black"><a href="callto:#">{{this.empresa.telefono}}</a></dd>
+    </dl>
+    <hr>
+    <dl>
+      <dt>Domicilio: </dt>
+      <dd style="color:black">{{this.empresa.domicilio}}</dd>
+    </dl>
+    <hr>
+    <dl>
+      <dt> E-mail: </dt>
+      <dd style="color:black"><a href="mailto:#">{{this.empresa.email}}</a></dd>
+    </dl>
+  </address>
+</section>
+<hr>
+<div class="ml-4">
+  <p>
+    {{this.empresa.denominacion}} <span id="copyright-year"></span>
+    <a href="">Privacy Policy</a>
+  </p>
+</div>

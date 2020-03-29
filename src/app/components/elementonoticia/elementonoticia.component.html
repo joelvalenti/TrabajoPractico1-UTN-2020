@@ -1,0 +1,65 @@
+<br>
+<div class="col-12">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Titulo de la noticia</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Titulo" aria-label="Titulo" aria-describedby="basic-addon1"
+      [(ngModel)]="noticia.titulo_de_la_noticia" required>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Resumen</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Resumen" aria-label="Resumen" aria-describedby="basic-addon1"
+      [(ngModel)]="noticia.resumen_de_la_noticia" required>
+  </div>
+  <div>
+    <div class="input-group-text">
+      <span class="btn" id="basic-addon1">Imagen de la noticia</span>
+      <input type="file" #imagenFile accept=".png, .jpg" (change)="onUpload($event)" [(ngModel)]="noticia.imagen_noticia">
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-sucess" role="progressbar"
+        [style.width]="(uploadPercent | async)+ '%' ">
+      </div>
+    </div>
+    <br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Publicada: Y/N</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Y/N" aria-label="Publicada" aria-describedby="basic-addon1"
+        [(ngModel)]="noticia.publicada" required>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Fecha Publicación</span>
+      </div>
+      <input type="text" class="form-control" placeholder="YYYY-MM-DD" aria-label="Fecha"
+        aria-describedby="basic-addon1" [(ngModel)]="noticia.fecha_publicacion" required>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Empresa</span>
+      </div>
+      <select [(ngModel)]="noticia.idEmpresa.id">
+        <option *ngFor="let i of empresas" [value]="i.id">
+          {{i.denominacion}}
+        </option>
+      </select>
+    </div>
+    <div>
+      <div>
+        <span class="input-group-text" id="basic-addon1">Contenido</span>
+      </div>
+      <editor [(ngModel)]="noticia.contenido_html" [init]="{height: 500, plugins : 'image'}"></editor>
+    </div>
+    <br>
+    <button *ngIf="flag == true; else btnDisabled" class="btn btn-primary btn-block"
+      (click)="save()">Guardar</button>
+    <ng-template #btnDisabled>
+      <button disabled=true class="btn btn-lg btn-secondary btn-block">Guardar</button>
+    </ng-template>
+    <br>
+  </div>

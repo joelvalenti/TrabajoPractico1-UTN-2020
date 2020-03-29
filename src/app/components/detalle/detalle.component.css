@@ -1,0 +1,25 @@
+.navbar {
+    background: rgb(27, 27, 27);
+    background: linear-gradient(90deg, rgba(27, 27, 27, 1) 0%, rgba(1, 55, 77, 1) 50%, rgba(27, 27, 27, 1) 100%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: -8px 9px 10px -1px rgba(1, 55, 77, 1);
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.container {
+    width: 900px;
+    height: 40px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.select {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: solid;
+    border-color: white;
+}

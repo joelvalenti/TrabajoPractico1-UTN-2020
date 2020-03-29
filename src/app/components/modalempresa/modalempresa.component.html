@@ -1,0 +1,110 @@
+<div class="modal" id="modalEmpresa" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{edit ? 'Actualizar empresa' : 'Agregar empresa'}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="formEmpresa" [formGroup]="formEmpresa" (ngSubmit)="onSave(formEmpresa)">
+                    <input type="hidden" name="id" id="id" formControlName="id">
+
+                    <div class="form-group">
+                        <label for="denominacion">Denominacion</label>
+                        <input type="text" class="form-control" placeholder="Denominacion" formControlName="denominacion">
+                        <div *ngIf ="formEmpresa.controls['denominacion'].invalid &&
+                                    formEmpresa.controls['denominacion'].touched"
+                                    class="is-invalid">
+                                    La denominacion es obligatoria.
+                        </div>
+                    </div>    
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="telefono">Telefono</label>
+                            <input type="text" class="form-control" placeholder="Telefono" formControlName="telefono">
+                            <div *ngIf ="formEmpresa.controls['telefono'].invalid &&
+                                        formEmpresa.controls['telefono'].touched"
+                                        class="is-invalid">
+                                        El telefono es obligatorio.
+                            </div>
+                        </div>  
+    
+                        <div class="form-group col-md-6">
+                            <label for="horario_de_atencion">Horario de atencion</label>
+                            <input type="text" class="form-control" placeholder="Horario" formControlName="horario_de_atencion">
+                            <div *ngIf ="formEmpresa.controls['horario_de_atencion'].invalid &&
+                                        formEmpresa.controls['horario_de_atencion'].touched"
+                                        class="is-invalid">
+                                        El horario de atencion es obligatorio.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quienes_somos">Quiénes somos</label>
+                        <input type="text" class="form-control" placeholder="Quienes somos" formControlName="quienes_somos">
+                        <div *ngIf ="formEmpresa.controls['quienes_somos'].invalid &&
+                                    formEmpresa.controls['quienes_somos'].touched"
+                                    class="is-invalid">
+                                    Quienes somos es obligatorio.
+                        </div>
+                    </div>  
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="latitud">Latitud</label>
+                            <input type="text" class="form-control" placeholder="Latitud" formControlName="latitud">
+                            <div *ngIf ="formEmpresa.controls['latitud'].invalid &&
+                                        formEmpresa.controls['latitud'].touched"
+                                        class="is-invalid">
+                                        La latitud es obligatoria.
+                                        Solo se permiten números.
+                            </div>
+                        </div>  
+    
+                        <div class="form-group col-md-6">
+                            <label for="longitud">Longitud</label>
+                            <input type="text" class="form-control" placeholder="Longitud" formControlName="longitud">
+                            <div *ngIf ="formEmpresa.controls['longitud'].invalid &&
+                                        formEmpresa.controls['longitud'].touched"
+                                        class="is-invalid">
+                                        La longitud es obligatoria.
+                                        Solo se permiten números.
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domicilio">Domicilio</label>
+                        <input type="text" class="form-control" placeholder="Domicilio" formControlName="domicilio">
+                        <div *ngIf ="formEmpresa.controls['domicilio'].invalid &&
+                                    formEmpresa.controls['domicilio'].touched"
+                                    class="is-invalid">
+                                    El domicilio es obligatorio.
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                        <div *ngIf ="formEmpresa.controls['email'].invalid &&
+                                    formEmpresa.controls['email'].touched"
+                                    class="is-invalid">
+                                    El email es obligatorio.
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" #btnClose (click)="onClose()">Cerrar</button>
+                        <button type="submit " class="btn btn-primary " #btnClose [disabled]="formEmpresa.invalid">Guardar empresa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

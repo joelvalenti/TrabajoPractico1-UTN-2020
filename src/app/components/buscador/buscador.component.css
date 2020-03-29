@@ -1,0 +1,12 @@
+.form-group {
+    display: flex;
+}
+
+.form-control {
+    margin-left: 25%;
+    width: 50%;
+}
+
+.container {
+    text-align: center;
+}
