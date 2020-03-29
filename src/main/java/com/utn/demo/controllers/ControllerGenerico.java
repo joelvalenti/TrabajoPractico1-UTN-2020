@@ -33,7 +33,7 @@ public class ControllerGenerico <E, S extends IservicioGenerico<E>>{
 	
 	@GetMapping("/{id}")
 	@Transactional
-	public ResponseEntity<?> getOne(@PathVariable int id) {
+	public ResponseEntity<?> getOne(@PathVariable long id) {
 
 		try {
 
@@ -67,7 +67,7 @@ public class ControllerGenerico <E, S extends IservicioGenerico<E>>{
 	
 	@PutMapping("/{id}")
 	@Transactional
-	public ResponseEntity<?> put(@PathVariable int id, @RequestBody E personaForm) {
+	public ResponseEntity<?> put(@PathVariable long id, @RequestBody E personaForm) {
 
 		try {
 
@@ -83,7 +83,7 @@ public class ControllerGenerico <E, S extends IservicioGenerico<E>>{
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	public ResponseEntity<?> delete(@PathVariable int id) {
+	public ResponseEntity<?> delete(@PathVariable long id) {
 
 		try {
 

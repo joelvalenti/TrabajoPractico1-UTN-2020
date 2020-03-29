@@ -63,7 +63,7 @@ public class NoticiaController extends ControllerGenerico<Noticia, NoticiaServic
 	
 	@GetMapping("/searchEmpresa/{id}")
 	@Transactional
-	public ResponseEntity getLast(@PathVariable("id") int id) {
+	public ResponseEntity getLast(@PathVariable("id") long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(service.getLast(id));
 		} catch (Exception e) {

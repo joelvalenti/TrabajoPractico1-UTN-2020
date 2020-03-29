@@ -1,12 +1,6 @@
 # Proyecto
-Este proyecto fue realizado para la materia Laboratorio IV Y Metodología de Sistemas, consiste en un sistema de empresas y noticias
+Este proyecto fue realizado para la materia Laboratorio IV, consiste en un sistema de empresas y noticias
 que contiene un backend con su respectivo frontend.
-
-# Integrantes
-* Astorga Nicolás,
-* Gutierrez Julian,
-* Rocha Fernando,
-* Valenti Joel
 
 # BackendGenerico
 Backend Genérico realizado en Spring 3.9 

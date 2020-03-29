@@ -46,7 +46,7 @@ public class Empresa extends GenericEntity implements Serializable {
 	private String email;
 	
 	@JsonIgnoreProperties(value = {"idEmpresa"}, allowSetters = true)
-	@OneToMany(mappedBy = "idEmpresa", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "idEmpresa", fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	private List<Noticia> noticias;
 	
 	public Empresa() {}

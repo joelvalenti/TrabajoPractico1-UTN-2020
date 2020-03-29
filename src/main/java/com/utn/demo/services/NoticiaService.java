@@ -84,7 +84,7 @@ public class NoticiaService extends ServicioGenerico<Noticia, NoticiaRepository>
 	}
 	
 	@Transactional
-	public List<Noticia> getLast( int id ) throws Exception{
+	public List<Noticia> getLast( long id ) throws Exception{
 		Pageable firstPageWithFiveElements = PageRequest.of(0, 5);
 		try {
 			List<Noticia> entities = repository.buscarPorEmpresa(id, firstPageWithFiveElements);

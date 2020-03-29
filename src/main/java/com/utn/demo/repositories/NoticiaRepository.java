@@ -16,7 +16,7 @@ public interface NoticiaRepository  extends JpaRepository<Noticia, Long>{
 	List<Noticia> buscarPorNombre(String consulta, Pageable pageable);
 	
 	@Query("from Noticia n where n.idEmpresa.id = ?1 order by n.fecha_publicacion")
-	List<Noticia> buscarPorEmpresa(int id, Pageable pageable);
+	List<Noticia> buscarPorEmpresa(long id, Pageable pageable);
 	
 	@Query("SELECT MAX(id) from Noticia")
 	String maximoIDnoticia();
