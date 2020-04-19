@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { EmpresaService } from './../../services/empresa.service';
 import { Empresa } from './../../model/empresa';
 import { NoticiaService } from './../../services/noticia.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Noticia } from 'src/app/model/noticia';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-elementonoticia',
@@ -20,6 +21,8 @@ export class ElementonoticiaComponent implements OnInit {
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;
   noticias: Noticia[];
+  public aux: string = '';
+  public flag: boolean = false;
 
   noticia: Noticia = {
     id: 0,
@@ -107,9 +110,6 @@ export class ElementonoticiaComponent implements OnInit {
         alert('Error al traer todas las empresas para vincular la noticia: ' + err);
       });
   }
-
-  public aux: string = '';
-  public flag: boolean = false;
 
   onUpload(e) {
     this.noticiaService.getMaxID().subscribe(res => {

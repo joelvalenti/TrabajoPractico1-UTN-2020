@@ -53,7 +53,7 @@
       <div>
         <span class="input-group-text" id="basic-addon1">Contenido</span>
       </div>
-      <editor [(ngModel)]="noticia.contenido_html" [init]="{height: 500, plugins : 'image'}"></editor>
+      <editor outputFormat="text" [(ngModel)]="noticia.contenido_html" [init]="{height: 500, plugins : 'image'}"></editor>
     </div>
     <br>
     <button *ngIf="flag == true; else btnDisabled" class="btn btn-primary btn-block"
